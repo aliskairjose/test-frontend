@@ -4,12 +4,10 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-classes',
   templateUrl: './classes.page.html',
   styleUrls: ['./classes.page.scss'],
+  standalone: false,
 })
 export class ClassesPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
