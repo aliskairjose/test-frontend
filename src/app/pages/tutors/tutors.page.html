@@ -6,6 +6,7 @@
       <ion-title size="large">tutors</ion-title>
     </ion-toolbar>
   </ion-header>
+<ion-searchbar></ion-searchbar>
 
   <ion-list>
     @for (tutor of tutors; track tutor; let i = $index) {
@@ -15,7 +16,7 @@
           {{tutor.first_name}} {{tutor.last_name}}
           <p>{{tutor.email}}</p>
         </ion-label>
-        <p>{{tutor.speciality}}</p>
+        <ion-badge [color]="specialityColor[tutor.speciality]">{{tutor.speciality}}</ion-badge>
       </ion-item>
       <ion-item-options>
         <ion-item-option>Detalle</ion-item-option>

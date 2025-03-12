@@ -9,7 +9,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Usuarios', url: '/student', icon: 'people' },
-    { title: 'Tutores', url: '/tutors', icon: 'people-circle' },
+    { title: 'Tutores', url: '/tutors', icon: 'ribbon' },
     { title: 'Reservas', url: '/booking', icon: 'bookmarks' },
   ];
   constructor() {}
