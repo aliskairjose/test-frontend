@@ -4,8 +4,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { ApiService } from './services';
 import { FilterTutorsPipe } from './pipes/filter-tutors.pipe';
+import { FilterBookingPipe } from './pipes/filter-booking.pipe';
 
-const D = [HeaderComponent, FilterTutorsPipe];
+const D = [HeaderComponent, FilterTutorsPipe, FilterBookingPipe];
 
 @NgModule({
   declarations: [...D],

@@ -6,8 +6,15 @@
       <ion-title size="large">booking</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-searchbar
+    [debounce]="500"
+    (ionInput)="handleInput($event.target.value)"
+    placeholder="Buscar por usuario..."
+  ></ion-searchbar>
+
   <ion-list>
-    @for (booking of bookings; track booking; let i = $index) {
+    @for (booking of bookings | filterBooking:query; track booking; let i =
+    $index) {
     <ion-item-sliding>
       <ion-item>
         <ion-label> {{booking.id}} </ion-label>
