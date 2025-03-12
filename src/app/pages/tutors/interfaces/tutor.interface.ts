@@ -1,10 +1,7 @@
-export interface TutorInterface {
-  id: number;
-  first_name: string;
-  last_name: string;
+import { UsersInterface } from "../../students/interfaces/user.interface";
+
+export interface TutorInterface extends UsersInterface {
   birth_date: Date;
-  email: string;
-  phone: string;
   role_id: number;
   status: string;
   speciality: string;

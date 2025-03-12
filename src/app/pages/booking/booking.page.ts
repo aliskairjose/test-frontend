@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/shared/services';
+import { BookingInterface } from './interfaces/booking.interface';
 
 @Component({
   selector: 'app-booking',
@@ -8,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingPage implements OnInit {
 
-  constructor() { }
+  #apiService = inject(ApiService);
+  bookings: BookingInterface[] = [];
 
   ngOnInit() {
   }

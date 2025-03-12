@@ -1,4 +1,6 @@
-export interface Tutor {
+import { UsersInterface } from "../../students/interfaces/user.interface";
+
+export interface BookingInterface {
   id: number;
   service_id: number;
   staff_id: number;
@@ -6,15 +8,10 @@ export interface Tutor {
   date: Date;
   start_time: string;
   end_time: string;
-  user: Staff;
-  staff: Staff;
+  user: UsersInterface;
+  staff: StaffInterface;
 }
 
-export interface Staff {
-  id: number;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone: string;
+export interface StaffInterface extends UsersInterface {
   speciality?: string;
 }
