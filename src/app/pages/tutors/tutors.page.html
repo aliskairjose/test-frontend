@@ -1,4 +1,4 @@
-<app-header title="Tutores"/>
+<app-header title="Tutores" />
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -6,16 +6,23 @@
       <ion-title size="large">tutors</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <ion-searchbar
+    [debounce]="500"
+    (ionInput)="handleInput($event.target.value)"
+    show-clear-button="focus"
+    placeholder="Buscar por Speciality..."
+  ></ion-searchbar>
   <ion-list>
-    @for (tutor of tutors; track tutor; let i = $index) {
+    @for (tutor of tutors | filterTutors:query; track tutor; let i = $index) {
     <ion-item-sliding>
       <ion-item>
         <ion-label>
           {{tutor.first_name}} {{tutor.last_name}}
           <p>{{tutor.email}}</p>
         </ion-label>
-        <p>{{tutor.speciality}}</p>
+        <ion-badge [color]="specialityColor[tutor.speciality]"
+          >{{tutor.speciality}}</ion-badge
+        >
       </ion-item>
       <ion-item-options>
         <ion-item-option>Detalle</ion-item-option>

@@ -3,14 +3,17 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { ApiService } from './services';
+import { FilterTutorsPipe } from './pipes/filter-tutors.pipe';
+
+const D = [HeaderComponent, FilterTutorsPipe];
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [...D],
   imports: [
     IonicModule,
     CommonModule
   ],
-  exports: [HeaderComponent],
+  exports: [...D],
   providers:[ApiService]
 })
 export class SharedModule { }
