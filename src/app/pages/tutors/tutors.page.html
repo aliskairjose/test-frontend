@@ -6,4 +6,21 @@
       <ion-title size="large">tutors</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    @for (tutor of tutors; track tutor; let i = $index) {
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>
+          {{tutor.first_name}} {{tutor.last_name}}
+          <p>{{tutor.email}}</p>
+        </ion-label>
+        <p>{{tutor.speciality}}</p>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option>Detalle</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    }
+  </ion-list>
 </ion-content>
