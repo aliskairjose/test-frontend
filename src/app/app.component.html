@@ -20,4 +20,9 @@
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
+   <ion-toast
+    [isOpen]="isToastOpen"
+    [message]="message"
+    [duration]="5000"
+  ></ion-toast>
 </ion-app>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonService } from './shared/services';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -6,11 +7,23 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class AppComponent {
-  public appPages = [
+  isToastOpen = false;
+  message = '';
+  appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Usuarios', url: '/student', icon: 'people' },
     { title: 'Tutores', url: '/tutors', icon: 'ribbon' },
     { title: 'Reservas', url: '/booking', icon: 'bookmarks' },
   ];
-  constructor() {}
+
+  #commonService = inject(CommonService);
+
+  constructor() {
+    this.#commonService.toastObservable().subscribe((message: string) => {
+      if (message) {
+        this.message = message;
+        this.isToastOpen = true;
+      }
+    });
+  }
 }
