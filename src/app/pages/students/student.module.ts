@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, IonNav } from '@ionic/angular';
 
 import { StudentPageRoutingModule } from './student-routing.module';
 
@@ -15,7 +15,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     IonicModule,
     StudentPageRoutingModule,
-    SharedModule
+    SharedModule,
+    IonNav
   ],
   declarations: [StudentPage]
 })

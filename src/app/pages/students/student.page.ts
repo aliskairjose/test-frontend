@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ApiEnum } from 'src/app/shared/enums.ts';
 import { ApiService } from 'src/app/shared/services';
 import { UsersInterface } from './interfaces/user.interface';
+import { DetailPage } from './detail/detail.page';
 
 @Component({
   selector: 'app-student',
@@ -12,11 +13,11 @@ import { UsersInterface } from './interfaces/user.interface';
 export class StudentPage implements OnInit {
   #apiService = inject(ApiService);
   users: UsersInterface[] = [];
-  constructor() {}
+  component = DetailPage;
 
   ngOnInit() {
     this.#apiService
       .list<UsersInterface[]>(ApiEnum.Usuarios)
-      .subscribe((users)=> this.users = users);
+      .subscribe((users) => (this.users = users));
   }
 }
