@@ -13,12 +13,16 @@ import { SpecialityType } from './constants/speciality.constant';
 export class TutorsPage implements OnInit {
   #apiService = inject(ApiService);
   specialityColor = SpecialityType;
-
+  query = '';
   tutors: TutorInterface[] = [];
 
   ngOnInit() {
     this.#apiService
       .list<TutorInterface[]>(ApiEnum.Tutores)
       .subscribe((tutors) => (this.tutors = tutors));
+  }
+
+  handleInput(term: unknown): void {
+    this.query = term as string;
   }
 }
