@@ -15,8 +15,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     IonicModule,
     BookingPageRoutingModule,
-    SharedModule
+    SharedModule,
   ],
-  declarations: [BookingPage]
+  declarations: [BookingPage],
 })
 export class BookingPageModule {}
