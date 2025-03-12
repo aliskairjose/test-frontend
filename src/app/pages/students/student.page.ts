@@ -2,7 +2,6 @@ import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { ApiEnum } from 'src/app/shared/enums.ts';
 import { ApiService } from 'src/app/shared/services';
 import { UsersInterface } from './interfaces/user.interface';
-import { DetailPage } from './detail/detail.page';
 import { IonModal } from '@ionic/angular';
 
 @Component({

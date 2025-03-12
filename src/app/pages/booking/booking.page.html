@@ -14,7 +14,7 @@
 
   <ion-list>
     @for (b of bookings | filterBooking:query; track b; let i = $index) {
-    <ion-card>
+    <ion-card color="light">
       <ion-card-header>
         <ion-card-subtitle>
           De: {{b.start_time}} a: {{b.end_time}}
