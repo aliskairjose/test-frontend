@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { IonicModule } from '@ionic/angular';
+import { ApiService } from './services';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -9,6 +10,7 @@ import { IonicModule } from '@ionic/angular';
     IonicModule,
     CommonModule
   ],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent],
+  providers:[ApiService]
 })
 export class SharedModule { }

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/shared/services';
+import { TutorInterface } from './interfaces/tutor.interface';
+import { ApiEnum } from 'src/app/shared/enums.ts';
 
 @Component({
   selector: 'app-tutors',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class TutorsPage implements OnInit {
-  constructor() {}
+  #apiService = inject(ApiService);
 
-  ngOnInit() {}
+  tutors: TutorInterface[] = [];
+
+  ngOnInit() {
+    this.#apiService
+      .list<TutorInterface[]>(ApiEnum.Tutores)
+      .subscribe((tutors) => (this.tutors = tutors));
+  }
 }
