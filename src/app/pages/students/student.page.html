@@ -5,11 +5,10 @@
       <ion-title size="large">student</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-nav [root]="component"></ion-nav>
   <ion-list>
     @for (user of users; track user; let i = $index) {
     <ion-item-sliding>
-      <ion-item [href]="'student/detail/'+user.id">
+      <ion-item id="open-modal" button (click)="setOpen(true, user.id)">
         <ion-label> {{user.first_name}} {{user.last_name}} </ion-label>
       </ion-item>
       <ion-item-options>
@@ -18,4 +17,12 @@
     </ion-item-sliding>
     }
   </ion-list>
+
+  <ion-alert
+    [isOpen]="isModalOpen"
+    [header]="user?.first_name + ' '+ user?.last_name"
+    [subHeader]="user?.email"
+    [message]="user?.phone"
+    (didDismiss)="setOpen(false)"
+  ></ion-alert>
 </ion-content>
