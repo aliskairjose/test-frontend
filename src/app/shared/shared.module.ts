@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { ApiService } from './services';
-import { FilterTutorsPipe } from './pipes/filter-tutors.pipe';
-import { FilterBookingPipe } from './pipes/filter-booking.pipe';
-import { NoResultsComponent } from './components/no-results/no-results.component';
+import { UserFilterPipe, FilterBookingPipe, FilterTutorsPipe } from './pipes';
+import { HeaderComponent, NoResultsComponent } from './components';
 
-const D = [HeaderComponent, FilterTutorsPipe, FilterBookingPipe, NoResultsComponent];
+const D = [HeaderComponent, FilterTutorsPipe, FilterBookingPipe, NoResultsComponent, UserFilterPipe];
 
 @NgModule({
   declarations: [...D],

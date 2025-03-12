@@ -15,6 +15,8 @@ export class StudentPage implements OnInit {
   users: UsersInterface[] = [];
   user: UsersInterface | undefined;
   isModalOpen = false;
+  query = '';
+
   @ViewChild(IonModal) modal!: IonModal;
 
   ngOnInit() {
@@ -28,4 +30,7 @@ export class StudentPage implements OnInit {
     this.user = this.users.find((u) => u.id === id);
   }
 
+  handleInput(query: unknown): void {
+    this.query = query as string;
+  }
 }
