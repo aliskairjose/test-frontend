@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 import { IonicModule } from '@ionic/angular';
+import { ApiService, CommonService } from './services';
+import { UserFilterPipe, FilterBookingPipe, FilterTutorsPipe } from './pipes';
+import { HeaderComponent, NoResultsComponent } from './components';
+
+const D = [
+  HeaderComponent,
+  FilterTutorsPipe,
+  FilterBookingPipe,
+  NoResultsComponent,
+  UserFilterPipe,
+];
 
 @NgModule({
-  declarations: [HeaderComponent],
-  imports: [
-    IonicModule,
-    CommonModule
-  ],
-  exports: [HeaderComponent]
+  declarations: [...D],
+  imports: [IonicModule, CommonModule],
+  exports: [...D],
+  providers: [ApiService, CommonService],
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -1,0 +1,49 @@
+<app-header title="Reservaciones" />
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">booking</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-searchbar
+    [debounce]="500"
+    (ionInput)="handleInput($event.target.value)"
+    placeholder="Buscar por usuario..."
+  ></ion-searchbar>
+
+  <ion-list>
+    @for (b of bookings | filterBooking:query; track b; let i = $index) {
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-card-subtitle>
+          De: {{b.start_time}} a: {{b.end_time}}
+          </ion-card-subtitle>
+        <ion-card-title>Reserva {{b.id}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <ion-text color="dark">
+                <h2>Usuario</h2>
+              </ion-text>
+              <p>{{b.user.first_name}} {{b.user.last_name}}</p>
+              <sub>{{b.user.email}}</sub>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text color="dark">
+                <h2>Staff</h2>
+              </ion-text>
+              <p>{{b.staff.first_name}} {{b.staff.last_name}}</p>
+              <sub>{{b.staff.email}}</sub>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    } @empty {
+    <app-no-results />
+    }
+  </ion-list>
+</ion-content>
