@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { CommonService } from './shared/services';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -6,11 +8,29 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class AppComponent {
-  public appPages = [
+  isToastOpen = false;
+  isOpen = signal<boolean>(false);
+  message = '';
+  appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Usuarios', url: '/student', icon: 'people' },
     { title: 'Tutores', url: '/tutors', icon: 'ribbon' },
     { title: 'Reservas', url: '/booking', icon: 'bookmarks' },
   ];
-  constructor() {}
+
+  #commonService = inject(CommonService);
+  constructor() {
+    this.#commonService.toastObservable().subscribe((message: string) => {
+      if (message) {
+        this.message = message;
+        this.isToastOpen = true;
+      }
+    });
+
+    this.#commonService.loadingObservable().subscribe((isLoading) => {
+      console.log(isLoading)
+      this.isOpen.set(isLoading)
+    });
+  }
+
 }

@@ -12,10 +12,15 @@ import { ApiEnum } from 'src/app/shared/enums.ts';
 export class BookingPage implements OnInit {
   #apiService = inject(ApiService);
   bookings: BookingInterface[] = [];
+  query = '';
 
   ngOnInit() {
     this.#apiService
       .list<BookingInterface[]>(ApiEnum.Booking)
       .subscribe((bookings) => (this.bookings = bookings));
+  }
+
+  handleInput(term: unknown): void{
+    this.query = term as string;
   }
 }

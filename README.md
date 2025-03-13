@@ -1,51 +1,48 @@
-# WorldsAcross Frontend Test
+![Texto alternativo](1667479076506.jpg "Kervin Gonzalez")
 
-## Descripción
-Esta es una prueba técnica para evaluar tus habilidades en Angular e Ionic. El objetivo es crear una aplicación frontend que consuma una API proporcionada.
-
-## Objetivos
-- Construir una aplicación en Angular e Ionic.
-- Consumir datos desde la API mockeada proporcionada.
-- Implementar filtros dinámicos y diseño responsivo.
-
-## Endpoints de la API
-Base URL: `https://test.worldsacross.com/api`
+# Prueba Técnica para Desarrollador Front-End Developer
+Prueba técnica para postulación a cargo de Desarrollador FrontEnd, prueba realizada por **Kervin Gonzalez**, kevingonzalez@gmail.com.
 
 
+## Instalación
+Asegurese de tener instalado **ionic CLI**, si no lo tiene ejecute el siguiente comando. Para el uso de Capacitor, se requierve versión **NodeJs >= 20**
 
-### Endpoints Disponibles
-- `GET /tutors`: Lista de tutores.
-- `GET /users`: Lista de usuarios.
-- `GET /booking`: Lista de reservas.
+```
+$ npm install -g @ionic/cli
+```
 
-## Funcionalidades a Implementar
+## Instalación de dependencias
+```bash
+$ npm install
+```
 
-### Lista de Tutores
-- Mostrar una lista de tutores obtenida del endpoint `/tutors`.
-- Implementar un filtro dinámico por `Speciality`.
+## Help
+Para acceder a los comenados del CLI, ejecute,
+```bash
+$ ionic --help
+$ ionic <command> --help
+$ ionic <command> <subcommand> --help
+```
 
-### Lista de Usuarios
-- Mostrar una lista de usuarios obtenida del endpoint `/users`.
-- Agregar la funcionalidad para seleccionar un usuario y mostrar sus detalles.
+## Code scaffolding
 
-### Reservas
-- Mostrar todas las reservas obtenidas del endpoint `/booking`.
-- Permitir filtrar reservas por `User`.
+- Ejecute `ionic g p`, para generar páginas. 
+- Ejecute `ionic g c`, para generar componentes. 
+- Ejecute `ionic g s`, para generar servicios. 
+- Ejecute `ionic g `, para generar páginas. 
 
-## Diseño
-- Usa componentes de Ionic para listas, inputs y botones.
-- Implementa un diseño responsivo que funcione en dispositivos móviles y desktop.
+## Build
+Ejecute `$ ionic build [options]`, dentro de las opciones puede usar `--prod` para la configuración a producción. `--watch` le permite reconstruir el proyecto cuando haya cambios en los archivos.
 
-## Recursos
-- Documentación de [Angular](https://angular.io/docs).
-- Documentación de [Ionic](https://ionicframework.com/docs).
+## Running develop mode
+Ejecute `$ ionic serve` para levantar el proyecto de forma local y realizar cambios en los archivos.
 
-## Extras Opcionales
-- Validaciones en formularios.
-- Agregar mensajes de error para manejo de errores al consumir la API.
-- Diseño avanzado para mejorar la experiencia del usuario.
+## Generar APK
+Antes de generar la APK, debe agregar las plataformas en las cuales desea degener, use el comando `$ ionic capacitor add [platform]`, la plataforma para agrerar (e.g. android, ios). Una ves inatalado la plataforma, ejecute el comando `$ ionic capacitor build [platform]`
 
-## Entrega
-1. Sube tu proyecto a un repositorio público o privado (y comparte acceso).
-2. Incluye un archivo `README.md` en tu repositorio con las instrucciones necesarias para ejecutar tu aplicación.
-3. Envía el enlace del repositorio.
+## ENV
+Copie el archivo `.env.example` que se encuentra en la raiz del proyecto, cree una carpeta `environments` dentro de `src` y copie 3 veces dentro de la carpeta y renombre los archivos como:
+- environment.dev.ts
+- environment.prod.ts
+- environment.ts
+al archivo `.env.prod` production key debe ser true, `.env.dev` production key debe ser false,  provea la url base de la api en la key `apiUrl`, la cual es *https://test.worldsacross.com/api/*
