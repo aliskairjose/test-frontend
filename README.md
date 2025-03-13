@@ -1,7 +1,8 @@
+![Texto alternativo](1667479076506.jpg "Kervin Gonzalez")
+
 # Prueba Técnica para Desarrollador Front-End Developer
 Prueba técnica para postulación a cargo de Desarrollador FrontEnd, prueba realizada por **Kervin Gonzalez**, kevingonzalez@gmail.com.
 
-![Texto alternativo](1667479076506.jpg "Título alternativo")
 
 ## Instalación
 Asegurese de tener instalado **ionic CLI**, si no lo tiene ejecute el siguiente comando. Para el uso de Capacitor, se requierve versión **NodeJs >= 20**
