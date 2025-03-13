@@ -2,7 +2,7 @@
 
 
 ## Instalación
-Asegurese de tener instalado ionic CLI, si no lo tiene ejecute el siguiente comando.
+Asegurese de tener instalado ionic CLI, si no lo tiene ejecute el siguiente comando. Para el uso de Capacitor, se requierve versión NodeJs >= 20
 
 ```
 $ npm install -g @ionic/cli
@@ -34,6 +34,8 @@ Ejecute `$ ionic build [options]`, dentro de las opciones puede usar `--prod` pa
 ## Running develop mode
 Ejecute `$ ionic serve` para levantar el proyecto de forma local y realizar cambios en los archivos.
 
+## Generar APK
+Antes de generar la APK, debe agregar las plataformas en las cuales desea degener, use el comando `$ ionic capacitor add [platform]`, la plataforma para agrerar (e.g. android, ios). Una ves inatalado la plataforma, ejecute el comando `$ ionic capacitor build [platform]`
 
 ## ENV
 Copie el archivo `.env.example` que se encuentra en la raiz del proyecto, cree una carpeta `environments` dentro de `src` y copie 3 veces dentro de la carpeta y renombre los archivos como:
