@@ -14,14 +14,19 @@ export const httpInterceptor: HttpInterceptorFn = (
   next: HttpHandlerFn
 ) => {
   const commonService = inject(CommonService);
+  commonService.loadingSubject(true);
   return next(req).pipe(
-    map((event: HttpEvent<unknown>) => event),
+    map((event: HttpEvent<unknown>) => {
+      commonService.loadingSubject(false);
+      return event;
+    }),
     catchError((error: HttpErrorResponse) => {
       if (error instanceof HttpErrorResponse) {
         const err = error.error.message ?? error.message;
         commonService.toastSubject(err);
       }
+      commonService.loadingSubject(false);
       return throwError(() => error);
-    })
+    }),
   );
 };
