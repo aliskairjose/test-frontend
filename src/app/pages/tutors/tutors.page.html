@@ -6,13 +6,16 @@
       <ion-title size="large">tutors</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-searchbar
-    [debounce]="500"
-    (ionInput)="handleInput($event.target.value)"
-    show-clear-button="focus"
-    placeholder="Buscar por Speciality..."
-  ></ion-searchbar>
+
   <ion-list>
+    <ion-item>
+      <ion-select interface="action-sheet" label="Selecccione" placeholder="Speciality" (ionChange)="handleChange($event.target.value)">
+        <ion-select-option value="">Todos</ion-select-option>
+        @for (s of specialities; track $index) {
+          <ion-select-option [value]="s">{{s}}</ion-select-option>
+        }
+      </ion-select>
+    </ion-item>
     @for (tutor of tutors | filterTutors:query; track tutor; let i = $index) {
     <ion-item-sliding>
       <ion-item>
@@ -28,9 +31,8 @@
         <ion-item-option>Detalle</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-    }
-     @empty {
-      <app-no-results />
+    } @empty {
+    <app-no-results />
     }
   </ion-list>
 </ion-content>

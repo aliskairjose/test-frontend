@@ -17,7 +17,6 @@ export class CommonService {
   }
 
   loadingSubject(isLoading: boolean): void {
-    console.log('subject', isLoading)
     this.#loading$.next(isLoading);
   }
 
