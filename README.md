@@ -1,8 +1,10 @@
 # Prueba Técnica para Desarrollador Front-End Developer
+Prueba técnica para postulación a cargo de Desarrollador FrontEnd, prueba realizada por **Kervin Gonzalez**, kevingonzalez@gmail.com.
 
+![Texto alternativo](1667479076506.jpg "Título alternativo")
 
 ## Instalación
-Asegurese de tener instalado ionic CLI, si no lo tiene ejecute el siguiente comando. Para el uso de Capacitor, se requierve versión NodeJs >= 20
+Asegurese de tener instalado **ionic CLI**, si no lo tiene ejecute el siguiente comando. Para el uso de Capacitor, se requierve versión **NodeJs >= 20**
 
 ```
 $ npm install -g @ionic/cli
@@ -42,4 +44,4 @@ Copie el archivo `.env.example` que se encuentra en la raiz del proyecto, cree u
 - environment.dev.ts
 - environment.prod.ts
 - environment.ts
-al archivo `.env.prod` production key debe ser true, `.env.dev` production key debe ser false,  provea la url base de la api en la key `apiUrl`, la cual es https://test.worldsacross.com/api/
+al archivo `.env.prod` production key debe ser true, `.env.dev` production key debe ser false,  provea la url base de la api en la key `apiUrl`, la cual es *https://test.worldsacross.com/api/*
