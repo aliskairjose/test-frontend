@@ -34,5 +34,10 @@ Ejecute `$ ionic build [options]`, dentro de las opciones puede usar `--prod` pa
 ## Running develop mode
 Ejecute `$ ionic serve` para levantar el proyecto de forma local y realizar cambios en los archivos.
 
-## ENV
 
+## ENV
+Copie el archivo `.env.example` que se encuentra en la raiz del proyecto, cree una carpeta `environments` dentro de `src` y copie 3 veces dentro de la carpeta y renombre los archivos como:
+- environment.dev.ts
+- environment.prod.ts
+- environment.ts
+al archivo `.env.prod` production key debe ser true, `.env.dev` production key debe ser false,  provea la url base de la api en la key `apiUrl`, la cual es https://test.worldsacross.com/api/
