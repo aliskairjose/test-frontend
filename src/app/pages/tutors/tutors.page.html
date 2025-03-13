@@ -28,9 +28,7 @@
           {{tutor.first_name}} {{tutor.last_name}}
           <p>{{tutor.email}}</p>
         </ion-label>
-        <ion-badge [color]="specialityColor[tutor.speciality]"
-          >{{tutor.speciality}}</ion-badge
-        >
+        <ion-chip outline [color]="specialityColor[tutor.speciality]">{{tutor.speciality}}</ion-chip>
       </ion-item>
       <ion-item-options>
         <ion-item-option>Detalle</ion-item-option>

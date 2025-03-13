@@ -3,7 +3,6 @@ import { ApiService } from 'src/app/shared/services';
 import { TutorInterface } from './interfaces/tutor.interface';
 import { ApiEnum } from 'src/app/shared/enums.ts';
 import { SpecialityType } from './constants/speciality.constant';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-tutors',

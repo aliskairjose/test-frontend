@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppComponent {
   isToastOpen = false;
-  isOpen = signal<boolean>(true);
+  isOpen = signal<boolean>(false);
   message = '';
   appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
@@ -28,7 +28,8 @@ export class AppComponent {
     });
 
     this.#commonService.loadingObservable().subscribe((isLoading) => {
-      this.isOpen.set(isLoading);
+      console.log(isLoading)
+      this.isOpen.set(isLoading)
     });
   }
 

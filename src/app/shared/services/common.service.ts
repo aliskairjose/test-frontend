@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommonService {
   #showToast$ = new BehaviorSubject('');
-  #loading$ = new BehaviorSubject(false);
+  #loading$ = new Subject<boolean>();
 
   toastSubject(message: string): void {
     this.#showToast$.next(message);
