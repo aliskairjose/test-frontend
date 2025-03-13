@@ -9,10 +9,15 @@
 
   <ion-list>
     <ion-item>
-      <ion-select interface="action-sheet" label="Selecccione" placeholder="Speciality" (ionChange)="handleChange($event.target.value)">
+      <ion-select
+        interface="action-sheet"
+        label="Selecccione"
+        placeholder="Especialidad"
+        (ionChange)="handleChange($event.target.value)"
+      >
         <ion-select-option value="">Todos</ion-select-option>
         @for (s of specialities; track $index) {
-          <ion-select-option [value]="s">{{s}}</ion-select-option>
+        <ion-select-option [value]="s">{{s}}</ion-select-option>
         }
       </ion-select>
     </ion-item>

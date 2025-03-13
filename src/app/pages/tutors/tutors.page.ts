@@ -31,7 +31,7 @@ export class TutorsPage implements OnInit {
     this.specialities = [...new Set(tutors.map((t) => t.speciality))];
   }
 
-  handleChange(value:unknown): void{
+  handleChange(value: unknown): void {
     this.query = value as string;
   }
 }
